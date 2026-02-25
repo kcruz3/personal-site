@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Kathryn Brockett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header {
+      padding-top: calc(var(--nav-h) + 64px);
+      padding-bottom: 48px;
+    }
+
+    .page-header h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .page-header p { font-size: 0.875rem; color: var(--mid); line-height: 1.6; }
+
+    /* PROJECT ROWS */
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--light);
+      transition: color 0.12s;
+    }
+
+    .project-item:first-child { border-top: 1px solid var(--light); }
+
+    .project-item:hover .proj-arrow {
+      transform: translate(2px, -2px);
+      color: var(--ink);
+    }
+
+    .project-body { flex: 1; min-width: 0; }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .project-type {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: var(--faint);
+      border: 1px solid var(--light);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+      max-width: 520px;
+    }
+
+    .project-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .project-tags .tag { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+
+    .project-pdf {
+      font-size: 0.75rem;
+      color: var(--mid);
+      border: 1px solid var(--light);
+      border-radius: 4px;
+      padding: 0.25rem 0.65rem;
+      transition: border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .project-pdf:hover { border-color: #bbb; color: var(--ink); }
+
+    .proj-arrow {
+      font-size: 0.8rem;
+      color: var(--mid);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Kathryn Brockett</a>
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="16" height="12" fill="none" viewBox="0 0 16 12">
+        <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+    <div class="page">
+
+      <header class="page-header">
+        <h1>Projects</h1>
+        <p>Research, coursework, and things I have built.</p>
+      </header>
+
+      <section class="reveal">
+
+        <a href="https://github.com/kcruz3/senior_comp" target="_blank" rel="noopener" class="project-item">
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-name">Senior Comprehensive Project</span>
+              <span class="project-type">Research</span>
+            </div>
+            <p class="project-desc">
+              Mathematical modeling of decision-making in reinforcement learning systems.
+              Built a Q-learning movie recommendation engine in Python with CherryPy, using
+              a Q-table, Bellman updates, and an epsilon-greedy policy to balance exploration
+              and exploitation.
+            </p>
+            <div class="project-bottom">
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">CherryPy</span>
+                <span class="tag">Reinforcement Learning</span>
+                <span class="tag">Applied Math</span>
+              </div>
+              <a href="Kathryn_Cruz_Comp.pdf" download class="project-pdf" onclick="event.stopPropagation()">
+                Download Paper
+              </a>
+            </div>
+          </div>
+          <span class="proj-arrow">&#8599;</span>
+        </a>
+
+        <a href="https://kcruz411.github.io/CollegePrepSite/" target="_blank" rel="noopener" class="project-item">
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-name">College Prep Site</span>
+              <span class="project-type">Web</span>
+            </div>
+            <p class="project-desc">
+              A resource website to support college applicants with curated materials,
+              application guidance, and examples. Focused on accessibility, simplicity,
+              and a clean user experience.
+            </p>
+            <div class="project-bottom">
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <span class="proj-arrow">&#8599;</span>
+        </a>
+
+        <a href="https://github.com/kcruz3/os-p6" target="_blank" rel="noopener" class="project-item">
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-name">Flash Translation Layer</span>
+              <span class="project-type">Systems</span>
+            </div>
+            <p class="project-desc">
+              Operating Systems course project implementing a flash translation layer in C.
+              Worked with disk and flash storage modules and a simulation driver, with a focus
+              on performance, correctness, and efficient memory management.
+            </p>
+            <div class="project-bottom">
+              <div class="project-tags">
+                <span class="tag">C</span>
+                <span class="tag">Operating Systems</span>
+                <span class="tag">Memory Management</span>
+              </div>
+            </div>
+          </div>
+          <span class="proj-arrow">&#8599;</span>
+        </a>
+
+        <a href="https://github.com/kcruz3/308-project" target="_blank" rel="noopener" class="project-item">
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-name">SMC CS Department Portal</span>
+              <span class="project-type">Web</span>
+            </div>
+            <p class="project-desc">
+              A web portal for the Math and CS Department at Saint Mary's College, centralizing
+              resources for students and faculty. Includes program overviews, degree planning
+              tools, advising info, and departmental updates.
+            </p>
+            <div class="project-bottom">
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <span class="proj-arrow">&#8599;</span>
+        </a>
+
+      </section>
+
+      <footer>
+        <span>Kathryn Brockett</span>
+        <a href="mailto:kathryn.brockett@yahoo.com">kathryn.brockett@yahoo.com</a>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    const t = document.getElementById('navToggle');
+    const n = document.getElementById('navList');
+    t.addEventListener('click', () => n.classList.toggle('open'));
+    n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => n.classList.remove('open')));
+    document.querySelectorAll('.reveal').forEach(el =>
+      new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 }).observe(el));
+  </script>
+</body>
+</html>

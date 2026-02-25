@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kathryn Brockett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero {
+      padding-top: calc(var(--nav-h) + 72px);
+      padding-bottom: 72px;
+    }
+
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .dot-green {
+      width: 6px; height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 strong { font-weight: 500; }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      padding: 28px 0;
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+    }
+
+    .stat-num {
+      font-size: 1.35rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-lbl { font-size: 0.72rem; color: var(--mid); }
+
+    /* ABOUT */
+    .about-text p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+      max-width: 560px;
+    }
+
+    .about-text p:last-of-type { margin-bottom: 0; }
+    .about-text strong { color: var(--ink); font-weight: 500; }
+
+    /* PHOTOS */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .photo-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--faint);
+    }
+
+    /* first photo portrait, second landscape */
+    .photo-item:first-child { aspect-ratio: 2/3; }
+    .photo-item:last-child  { aspect-ratio: 2/3; }
+
+    .photo-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-item:hover img { transform: scale(1.03); }
+
+    /* QUICK LINKS */
+    .link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--light);
+      transition: color 0.12s;
+    }
+
+    .link-row:first-child { border-top: 1px solid var(--light); }
+    .link-row:hover .arrow { transform: translate(2px,-2px); }
+
+    .link-title { font-size: 0.9rem; font-weight: 500; }
+    .link-hint  { font-size: 0.75rem; color: var(--mid); margin-top: 0.1rem; }
+
+    .arrow {
+      font-size: 0.8rem;
+      color: var(--mid);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .stats { gap: 1.5rem; flex-wrap: wrap; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-item:first-child,
+      .photo-item:last-child { aspect-ratio: 3/4; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Kathryn Brockett</a>
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="16" height="12" fill="none" viewBox="0 0 16 12">
+        <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+    <div class="page">
+
+      <header class="hero">
+        <div class="hero-location">
+          <span class="dot-green"></span>
+          Bellevue, WA
+        </div>
+        <h1><strong>Kathryn Brockett.</strong><br>Software Engineer at Microsoft.</h1>
+        <p class="hero-sub">
+          Building software at Microsoft. CS grad from Notre Dame and
+          Saint Mary's College. Based in Bellevue, WA.
+        </p>
+        <div class="hero-actions">
+          <a href="resume.html"   class="btn btn-dark">View Resume</a>
+          <a href="projects.html" class="btn btn-ghost">Projects</a>
+          <a href="contact.html"  class="btn btn-ghost">Contact</a>
+        </div>
+      </header>
+
+      <div class="stats reveal">
+        <div>
+          <div class="stat-num">SWE</div>
+          <div class="stat-lbl">Microsoft</div>
+        </div>
+        <div>
+          <div class="stat-num">3x</div>
+          <div class="stat-lbl">Intern Alumni</div>
+        </div>
+        <div>
+          <div class="stat-num">4+1</div>
+          <div class="stat-lbl">Dual Degree</div>
+        </div>
+      </div>
+
+      <section class="section reveal">
+        <p class="label">About</p>
+        <div class="about-text">
+          <p>
+            I'm a <strong>Software Engineer at Microsoft</strong>, joining after three internships
+            there working on Copilot, gRPC streaming infrastructure, and developer tooling.
+          </p>
+          <p>
+            I hold a B.S. in Computing and Applied Mathematics from
+            <strong>Saint Mary's College</strong> (Pi Mu Epsilon) and a B.S. in Computer Science
+            from <strong>Notre Dame</strong> through a 4+1 dual degree program. I also mentored
+            50+ students as a TA for <strong>Girls Who Code</strong>.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">C#</span>
+            <span class="tag">Java</span>
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">gRPC</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <p class="label">Photos</p>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="grad1.JPG" alt="Kathryn Brockett graduation" />
+          </div>
+          <div class="photo-item">
+            <img src="grad2.JPG" alt="Kathryn Brockett graduation" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <p class="label">Explore</p>
+        <a href="projects.html" class="link-row">
+          <div>
+            <div class="link-title">Projects</div>
+            <div class="link-hint">Things I have built and shipped</div>
+          </div>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="resume.html" class="link-row">
+          <div>
+            <div class="link-title">Resume</div>
+            <div class="link-hint">Experience, education, skills</div>
+          </div>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="contact.html" class="link-row">
+          <div>
+            <div class="link-title">Contact</div>
+            <div class="link-hint">Get in touch</div>
+          </div>
+          <span class="arrow">&#8599;</span>
+        </a>
+      </section>
+
+      <footer>
+        <span>Kathryn Brockett &middot; Bellevue, WA</span>
+        <a href="mailto:kathryn.brockett@yahoo.com">kathryn.brockett@yahoo.com</a>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    const t = document.getElementById('navToggle');
+    const n = document.getElementById('navList');
+    t.addEventListener('click', () => n.classList.toggle('open'));
+    n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => n.classList.remove('open')));
+    document.querySelectorAll('.reveal').forEach(el =>
+      new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 }).observe(el));
+  </script>
+</body>
+</html>

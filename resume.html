@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Kathryn Brockett</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header {
+      padding-top: calc(var(--nav-h) + 64px);
+      padding-bottom: 48px;
+    }
+
+    .page-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .page-header p { font-size: 0.8rem; color: var(--mid); }
+
+    .resume-item {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .resume-item:last-child { border-bottom: none; }
+
+    .resume-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+
+    .resume-item-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .resume-item-date {
+      font-size: 0.72rem;
+      color: var(--mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .resume-item-sub {
+      font-size: 0.75rem;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .resume-item-desc {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .resume-item-desc li {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.6;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .resume-item-desc li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+
+    .skills-group {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      gap: 1.5rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .skills-group:last-child { border-bottom: none; }
+
+    .skills-group-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--mid);
+      min-width: 80px;
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .skills-group-items {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .page-header-row { flex-direction: column; align-items: flex-start; }
+      .skills-group { flex-direction: column; gap: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Kathryn Brockett</a>
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="16" height="12" fill="none" viewBox="0 0 16 12">
+        <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+    <div class="page">
+
+      <header class="page-header">
+        <div class="page-header-row">
+          <div>
+            <h1>Resume</h1>
+            <p>kathryn.brockett@yahoo.com &middot; 847-564-6282 &middot; Bellevue, WA</p>
+          </div>
+          <a href="Kathryn_Brockett_Resume.pdf" class="btn btn-ghost" download>Download PDF</a>
+        </div>
+      </header>
+
+      <!-- EDUCATION -->
+      <section class="section reveal">
+        <p class="label">Education</p>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">University of Notre Dame</span>
+            <span class="resume-item-date">Aug 2022 – May 2026</span>
+          </div>
+          <div class="resume-item-sub">B.S. Computer Science &middot; Notre Dame, IN &middot; 4+1 Dual Degree Program</div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Saint Mary's College</span>
+            <span class="resume-item-date">Aug 2021 – May 2025</span>
+          </div>
+          <div class="resume-item-sub">B.S. Computing and Applied Mathematics &middot; Notre Dame, IN</div>
+          <ul class="resume-item-desc" style="margin-top:0.4rem">
+            <li>Pi Mu Epsilon mathematics honor society member</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section reveal">
+        <p class="label">Experience</p>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Microsoft &mdash; Software Engineer</span>
+            <span class="resume-item-date">2026 &ndash; Present</span>
+          </div>
+          <div class="resume-item-sub">Redmond, WA</div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Microsoft &mdash; Software Engineer Intern</span>
+            <span class="resume-item-date">May – Aug 2025</span>
+          </div>
+          <div class="resume-item-sub">Copilot &middot; Redmond, WA</div>
+          <ul class="resume-item-desc">
+            <li>Expanded the semantic modeling language powering Copilot queries, improving expressiveness and coverage for natural language inputs</li>
+            <li>Contributed and merged 3,000+ lines of production code following rigorous review and deployment practices</li>
+            <li>Enhanced prompt logic for Copilot, refining system instructions to improve response accuracy and developer experience</li>
+            <li>Designed and authored one-pagers and solution approach documents, driving alignment across engineering and product stakeholders</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Microsoft &mdash; Software Engineer Intern</span>
+            <span class="resume-item-date">May – Aug 2024</span>
+          </div>
+          <div class="resume-item-sub">Compact Signal Store &middot; Redmond, WA</div>
+          <ul class="resume-item-desc">
+            <li>Led Compact Signal Store streaming work, optimizing data storage using gRPC protocols</li>
+            <li>Implemented a gRPC service and client for streaming query results, reducing latency</li>
+            <li>Monitored COGS and latencies, delivering insights that contributed to cost savings and efficiency improvements</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Microsoft &mdash; Explorer Intern</span>
+            <span class="resume-item-date">May – Aug 2023</span>
+          </div>
+          <div class="resume-item-sub">Developer Experience &middot; Redmond, WA</div>
+          <ul class="resume-item-desc">
+            <li>Built a dynamic front-end table using React, Node.js, and SCSS for the Developer Experience team</li>
+            <li>Designed a comprehensive product management spec in Figma, facilitating alignment with project objectives</li>
+            <li>Conducted thorough testing to ensure a robust, intuitive user interface</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <span class="resume-item-title">Girls Who Code &mdash; Teaching Assistant</span>
+            <span class="resume-item-date">Jun – Aug 2022</span>
+          </div>
+          <div class="resume-item-sub">Summer Immersion Program &middot; Remote</div>
+          <ul class="resume-item-desc">
+            <li>Instructed and mentored 50–60 students in HTML, CSS, and JavaScript via Zoom</li>
+            <li>Facilitated weekly advisory meetings and sisterhood activities to build community</li>
+            <li>Co-hosted Student Hours to provide troubleshooting and debugging support</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section reveal">
+        <p class="label">Skills</p>
+
+        <div class="skills-group">
+          <span class="skills-group-label">Languages</span>
+          <span class="skills-group-items">Python, C, C#, Java, JavaScript, HTML, CSS, SCSS</span>
+        </div>
+        <div class="skills-group">
+          <span class="skills-group-label">Frameworks</span>
+          <span class="skills-group-items">React, React Native, Node.js, gRPC</span>
+        </div>
+        <div class="skills-group">
+          <span class="skills-group-label">Tools</span>
+          <span class="skills-group-items">Figma, CAD, Microsoft Office, Google Workspace</span>
+        </div>
+      </section>
+
+      <footer>
+        <span>Kathryn Brockett</span>
+        <a href="mailto:kathryn.brockett@yahoo.com">kathryn.brockett@yahoo.com</a>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    const t = document.getElementById('navToggle');
+    const n = document.getElementById('navList');
+    t.addEventListener('click', () => n.classList.toggle('open'));
+    n.querySelectorAll('a').forEach(a => a.addEventListener('click', () => n.classList.remove('open')));
+    document.querySelectorAll('.reveal').forEach(el =>
+      new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 }).observe(el));
+  </script>
+</body>
+</html>
